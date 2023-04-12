@@ -1,0 +1,27 @@
+$header1: 2.5rem;
+$header2: 4rem;
+$header3: 2.5rem;
+$header4: 2rem;
+$text: 2.5rem;
+$gradient: linear-gradient(to right, #f0da0f, #de5d00);
+$secondary-gradient: linear-gradient(
+  135deg,
+  rgba(3, 60, 94, 0.8) 0%,
+  rgba(59, 29, 87, 0.8) 100%
+);
+$background-color: #154353;
+$gray-text: silver;
+$almost-black: rgb(32, 32, 32);
+$blue: #0053b8;
+$purple: #b373f7;
+$yellow-bg: #fec600;
+$orange: #ffb800;
+
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@import "global";
