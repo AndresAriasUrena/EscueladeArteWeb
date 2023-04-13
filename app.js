@@ -28,12 +28,12 @@ function animateSlides() {
       triggerHook: 0.25,
     })
       .setTween(slideTl)
-      .addIndicators({
+      /* .addIndicators({
         colorStart: "white",
         colorTrigger: "black",
         name: "slide",
         // reverse: false
-      })
+      }) */
       .addTo(controller);
     //New animation
     const pageTl = gsap.timeline();
@@ -48,12 +48,12 @@ function animateSlides() {
       duration: "100%", //The duration is going to be the whole slide
       triggerHook: 0,
     })
-      .addIndicators({
+/*       .addIndicators({
         colorStart: "purple",
         colorTrigger: "green",
         name: "page",
         indent: 200,
-      })
+      }) */
       .setPin(slide, { pushFollowers: false })
       .setTween(pageTl)
       .addTo(controller);
