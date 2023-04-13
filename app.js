@@ -19,8 +19,8 @@ function animateSlides() {
       defaults: { duration: 1, ease: "power2.inOut" },
     });
     slideTl.fromTo(revealText, { x: "0%" }, { x: "100%" });
+    slideTl.fromTo(img, { scale: 1.8 }, { scale: 1.1 }, "-=1");
     slideTl.fromTo(revealImg, { x: "0%" }, { x: "100%" }, "-=0.75");
-    slideTl.fromTo(img, { scale: 1.5 }, { scale: 1.1 }, "-=1");
     // slideTl.fromTo(nav, { y: "-100%" }, { y: "0" }, "-=0.5");
     //Create Scene
     slideScene = new ScrollMagic.Scene({
@@ -37,10 +37,10 @@ function animateSlides() {
       .addTo(controller);
     //New animation
     const pageTl = gsap.timeline();
-    let nextSlide = slides.length - 1 === index ? "end" : slides[(index = 1)];
+    let nextSlide = slides.length - 1 === index ? "end" : slides[index + 1];
     pageTl.fromTo(nextSlide, { y: "0%" }, { y: "50%" });
     pageTl.fromTo(slide, { opacity: 1, sacale: 1 }, { opacity: 0, scale: 0.5 });
-    pageTl.fromTo(nextSlide, { y: "50%" }, { y: "0%" }, "-=0.5");
+    pageTl.fromTo(nextSlide, { y: "50%" }, { y: "0%" }, "-=0.3");
 
     //Create new scene
     pageScene = new ScrollMagic.Scene({
@@ -80,11 +80,8 @@ function activeCursor(e) {
     mouse.classList.add("donar-active");
     mouseTxt.innerText = "Click!";
     // gsap.to(".title-swipe", 1, { y: "0%" });
-    if (item.classList.contains("inicio-donar")) {
-      gsap.to(".title", 1, { color: "#ffb800" });
-    } else if (item.classList.contains("programas-donar")) {
-      gsap.to(".title", 1, { color: "#b373f7" });
-    }
+
+    gsap.to(".title", 1, { color: "#ffb800" });
   } else {
     mouse.classList.remove("donar-active");
     mouseTxt.innerText = "";

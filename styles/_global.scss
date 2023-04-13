@@ -6,7 +6,11 @@
 
 body {
   //   background: linear-gradient(90deg, #ffe600 36.85%, #ffb800 74.89%);
-  background: $almost-black;
+  // background: $almost-black;
+  background: url("../img/scattered-forcefields-1.png");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
 }
@@ -88,6 +92,9 @@ body {
   .hero-desc {
     padding-left: 5rem;
     overflow: hidden;
+    .donar {
+      align-self: flex-start;
+    }
   }
 }
 .hero-desc {
@@ -124,18 +131,23 @@ body {
   color: $orange;
 }
 .programas-span {
-  //   color: $purple;
+  color: $orange;
+}
+.nosotros-span {
   color: $orange;
 }
 .donar {
-  padding: 1rem 2rem;
+  // padding: 1rem 2rem;
   background: none;
   color: white;
-  border: 1px solid white;
+  // border: 1px solid white;
   font-size: 1rem;
   text-decoration: none;
   align-self: center;
   cursor: pointer;
+  img {
+    pointer-events: none;
+  }
 }
 .nav-bar {
   position: fixed;
@@ -218,10 +230,11 @@ body {
   //     align-self: flex-end;
   //   }
 }
-#programas {
+#programas,
+#nosotros {
   .hero-img {
     border-radius: 2rem;
-    border: 2px solid $orange;
+    // border: 2px solid $orange;
     img {
       object-fit: cover;
     }
