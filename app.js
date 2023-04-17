@@ -1,6 +1,7 @@
 let controller;
 let slideScene;
 let pageScene;
+let detailScene;
 
 function animateSlides() {
   //Init Controller
@@ -12,6 +13,7 @@ function animateSlides() {
   sliders.forEach((slide, index, slides) => {
     const revealImg = slide.querySelector(".reveal-right");
     const img = slide.querySelector("img");
+    console.log(img);
     const revealText = slide.querySelector(".reveal-left");
     //GSAP
     // gsap.to(revealImg, 1, { x: "100%" });
@@ -39,7 +41,7 @@ function animateSlides() {
     const pageTl = gsap.timeline();
     let nextSlide = slides.length - 1 === index ? "end" : slides[index + 1];
     pageTl.fromTo(nextSlide, { y: "0%" }, { y: "50%" });
-    pageTl.fromTo(slide, { opacity: 1, sacale: 1 }, { opacity: 0, scale: 0.5 });
+    pageTl.fromTo(slide, { opacity: 1, scale: 1 }, { opacity: 0, scale: 0.5 });
     pageTl.fromTo(nextSlide, { y: "50%" }, { y: "0%" }, "-=0.3");
 
     //Create new scene
@@ -48,7 +50,7 @@ function animateSlides() {
       duration: "100%", //The duration is going to be the whole slide
       triggerHook: 0,
     })
-/*       .addIndicators({
+      /*       .addIndicators({
         colorStart: "purple",
         colorTrigger: "green",
         name: "page",
@@ -119,6 +121,112 @@ function navToggle(e) {
     document.body.classList.remove("hide");
   }
 }
+
+// function donarAnimation() {
+//   controller = new ScrollMagic.Controller();
+//   const slides = document.querySelectorAll(".detail-slide");
+//   slides.forEach((slide, index, slides) => {
+//     const slideTl = gsap.timeline({ defaults: { duration: 1 } });
+//     let nextSlide = slides.length - 1 === index ? "end" : slides[index + 1];
+//     const nextImg = nextSlide.querySelector("img");
+//     sliderTl.fromTo(slide, { opacity: 1 }, { opacity: 0 });
+//     //Scene
+//     detailScene = new ScrollMagic.Scene({
+//       triggerElement: slide,
+//       duration: "100%",
+//       triggerHook: 0,
+//     })
+//       .setPin(slide, { pushFollowers: false })
+//       .setTween(slideTl)
+//       .addIndicators({
+//         colorStart: "white",
+//         colorTrigger: "yellow",
+//         name: "slide",
+//       })
+//       .addTo(controller);
+//   });
+// }
+function detailAnimation() {
+  controller = new ScrollMagic.Controller();
+  const slides = document.querySelectorAll(".detail-slide");
+  slides.forEach((slide, index, slides) => {
+    const slideTl = gsap.timeline({ defaults: { duration: 1 } });
+    let nextSlide = slides.length - 1 === index ? "end" : slides[index + 1];
+    const nextTimg = nextSlide.querySelector("img");
+    slideTl.fromTo(slide, { opacity: 1 }, { opacity: 0 });
+    slideTl.fromTo(nextSlide, { opacity: 0 }, { opacity: 1 }, "-=1");
+    slideTl.fromTo(nextTimg, { x: "50%" }, { x: "0%" });
+    //Scene
+    detailScene = new ScrollMagic.Scene({
+      triggerElement: slide,
+      duration: "100%",
+      triggerHook: 0,
+    })
+      .setPin(slide, { pushFollowers: false })
+      .setTween(slideTl)
+      .addTo(controller);
+  });
+}
+
+//Barba PAge Transitions
+const logo = document.querySelector("#logo1");
+barba.init({
+  views: [
+    {
+      namespace: "home",
+      beforeEnter() {
+        animateSlides();
+        logo.href = "./index.html";
+      },
+      beforeLeave() {
+        slideScene.destroy();
+        pageScene.destroy();
+        controller.destroy();
+      },
+    },
+    {
+      namespace: "donacion",
+      beforeEnter() {
+        logo.href = "../index.html";
+        console.log("logo activado");
+        // donarAnimation();
+        detailAnimation();
+        console.log("Donar animacion ");
+      },
+    },
+  ],
+  transitions: [
+    {
+      leave({ current, next }) {
+        let done = this.async();
+        //scroll to the top
+        window.scrollTo(0, 0);
+        //an animation
+        const tl = gsap.timeline({ defaults: { ease: "power2inOut" } });
+        tl.fromTo(current.container, 1, { opacity: 1 }, { opacity: 0 });
+        tl.fromTo(
+          ".swipe",
+          0.75,
+          { x: "-100" },
+          { x: "0%", onComplete: done },
+          "-=0.5"
+        );
+      },
+      enter({ current, next }) {
+        let done = this.async();
+        //an animation
+        const tl = gsap.timeline({ defaults: { ease: "power2inOut" } });
+        tl.fromTo(
+          ".swipe",
+          1,
+          { x: "0%" },
+          { x: "100%", stagger: 0.25, onComplete: done }
+        );
+        tl.fromTo(next.container, 1, { opacity: 0 }, { opacity: 1 });
+      },
+    },
+  ],
+});
 
 //Event listeners
 window.addEventListener("mousemove", cursor);

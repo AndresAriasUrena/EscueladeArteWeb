@@ -1,0 +1,69 @@
+.donar-indice {
+  background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url("../img/fondo_byn.svg");
+  //   background: linear-gradient(
+  //       135deg,
+  //       rgba(3, 60, 94, 0.3) 0%,
+  //       rgba(59, 29, 87, 0.3) 100%
+  //     ),
+  //     url("../img/fondo_byn.svg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+}
+
+.donacion1,
+.donacion2,
+.donacion3 {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: auto;
+  color: white;
+  margin-top: 5rem;
+  flex-wrap: wrap;
+  position: relative;
+  text-shadow: 1px 1px 2px black;
+
+  h1 {
+    color: $yellow-bg;
+  }
+}
+.donacion-img {
+  height: 75vh;
+  flex-basis: 30rem;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+.donacion-text {
+  flex: 1;
+  position: relative;
+  flex-basis: 25rem;
+  h1 {
+    font-size: 6rem;
+    padding: 5rem 0rem;
+  }
+  p {
+    font-size: 2rem;
+    padding: 2rem 2rem 0rem 0rem;
+    margin-bottom: 10rem;
+  }
+}
+.donacion-nr {
+  font-size: 15rem;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  color: white;
+  opacity: 0.8;
+}
