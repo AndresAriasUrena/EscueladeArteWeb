@@ -56,7 +56,7 @@ $orange: #ffb800;
         padding: 1rem 0rem;
       }
       p {
-        padding: 1rem 1rem;
+        padding: 1rem 1rem 0 1rem;
         font-size: 1.5rem;
         line-height: 2rem;
         text-align: center;
@@ -145,15 +145,28 @@ $orange: #ffb800;
         ),
       url("../img/escuela-de-arte-bn.png") center right no-repeat;
   }
+  .secundaria {
+    .hero-desc {
+      p {
+        padding-bottom: 0;
+      }
+    }
+  }
   .donacion-text {
+    margin: 1rem 0 0 0;
     p {
       margin: 0;
+      font-size: 1.5rem;
+      line-height: 2rem;
     }
   }
   .donacion-img {
     max-height: 55vh;
     flex-basis: content;
     max-width: 70%;
+  }
+  .donacion1 .donacion-img {
+    padding-top: 0.5rem;
   }
 }
 
@@ -199,6 +212,146 @@ $orange: #ffb800;
     .hero-img {
       margin-top: 8rem;
       max-height: 40vh;
+    }
+  }
+  .detail-slide {
+    h1 {
+      font-size: 3.5rem;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 440px) {
+  #inicio {
+    .hero-desc {
+      margin-top: 5rem;
+      min-height: 70vh;
+      justify-content: space-between;
+      h2 {
+        padding-top: 1.5rem;
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1.2rem;
+        padding: 0;
+        margin-top: 2rem;
+      }
+      .donar {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+  .secundaria {
+    .hero-desc {
+      padding: 0;
+      h2 {
+        font-size: 2rem;
+        line-height: 2.2rem;
+        padding: 1rem 0rem;
+      }
+      p {
+        padding: 0;
+        margin-top: 1rem;
+        font-size: 1rem;
+        line-height: 2rem;
+        text-align: center;
+      }
+    }
+    .hero-img {
+      flex-basis: 0%;
+    }
+    .donar {
+      margin: 0 auto;
+    }
+  }
+  .detail-slide {
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+  }
+  .nav-header {
+    min-height: 4rem;
+    padding: 0 5vw;
+  }
+  .logo {
+    img {
+      max-height: 6vh;
+    }
+  }
+  .line1,
+  .line2 {
+    width: 2rem;
+  }
+}
+@media screen and (max-height: 770px) {
+  #inicio {
+    .hero-desc {
+      margin-top: 4rem;
+      min-height: 85vh;
+      h2 {
+        padding-top: 1rem;
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.1rem;
+        margin-top: -3rem;
+        line-height: 1.8rem;
+      }
+      .donar {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+  .secundaria {
+    .hero-desc {
+      h2 {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        padding: 0 0 0.5rem 0rem;
+      }
+      p {
+        margin-top: 0rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        text-align: center;
+      }
+    }
+    .hero-img {
+      margin-top: 5rem;
+    }
+    .donar {
+      img {
+        margin-top: -0.5rem;
+      }
+    }
+  }
+  .nav-links {
+    font-size: 1.5rem;
+  }
+  .contact {
+    h2 {
+      font-size: 2.5rem;
+    }
+    p {
+      padding-top: 0;
+    }
+  }
+  .donacion-text {
+    margin: 0;
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+  }
+  .donacion-img {
+    img {
+      height: 80%;
     }
   }
 }

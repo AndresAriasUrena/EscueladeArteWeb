@@ -332,9 +332,7 @@ body.hide {
   position: absolute;
 }
 
-.donacion1,
-.donacion2,
-.donacion3 {
+.detail-slide {
   min-height: 90vh;
   display: flex;
   justify-content: center;
@@ -346,9 +344,7 @@ body.hide {
   position: relative;
   text-shadow: 1px 3px 2px black;
 }
-.donacion1 h1,
-.donacion2 h1,
-.donacion3 h1 {
+.detail-slide h1 {
   color: #fec600;
 }
 
@@ -412,7 +408,7 @@ body.hide {
     padding: 1rem 0rem;
   }
   .secundaria .hero-desc p {
-    padding: 1rem 1rem;
+    padding: 1rem 1rem 0 1rem;
     font-size: 1.5rem;
     line-height: 2rem;
     text-align: center;
@@ -487,13 +483,24 @@ body.hide {
   .header {
     background: url("../img/guitarrista.png") center bottom/80% no-repeat, linear-gradient(135deg, rgba(3, 60, 94, 0.8) 0%, rgba(59, 29, 87, 0.8) 100%), url("../img/escuela-de-arte-bn.png") center right no-repeat;
   }
+  .secundaria .hero-desc p {
+    padding-bottom: 0;
+  }
+  .donacion-text {
+    margin: 1rem 0 0 0;
+  }
   .donacion-text p {
     margin: 0;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
   .donacion-img {
     max-height: 55vh;
     flex-basis: content;
     max-width: 70%;
+  }
+  .donacion1 .donacion-img {
+    padding-top: 0.5rem;
   }
 }
 @media screen and (max-width: 660px) {
@@ -528,5 +535,122 @@ body.hide {
   .secundaria .hero-img {
     margin-top: 8rem;
     max-height: 40vh;
+  }
+  .detail-slide h1 {
+    font-size: 3.5rem;
+  }
+  .detail-slide p {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 440px) {
+  #inicio .hero-desc {
+    margin-top: 5rem;
+    min-height: 70vh;
+    justify-content: space-between;
+  }
+  #inicio .hero-desc h2 {
+    padding-top: 1.5rem;
+    font-size: 2.5rem;
+  }
+  #inicio .hero-desc p {
+    font-size: 1.2rem;
+    padding: 0;
+    margin-top: 2rem;
+  }
+  #inicio .hero-desc .donar {
+    margin-right: 1.5rem;
+  }
+  .secundaria .hero-desc {
+    padding: 0;
+  }
+  .secundaria .hero-desc h2 {
+    font-size: 2rem;
+    line-height: 2.2rem;
+    padding: 1rem 0rem;
+  }
+  .secundaria .hero-desc p {
+    padding: 0;
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 2rem;
+    text-align: center;
+  }
+  .secundaria .hero-img {
+    flex-basis: 0%;
+  }
+  .secundaria .donar {
+    margin: 0 auto;
+  }
+  .detail-slide h1 {
+    font-size: 2.5rem;
+  }
+  .detail-slide p {
+    font-size: 1.1rem;
+  }
+  .nav-header {
+    min-height: 4rem;
+    padding: 0 5vw;
+  }
+  .logo img {
+    max-height: 6vh;
+  }
+  .line1,
+  .line2 {
+    width: 2rem;
+  }
+}
+@media screen and (max-height: 770px) {
+  #inicio .hero-desc {
+    margin-top: 4rem;
+    min-height: 85vh;
+  }
+  #inicio .hero-desc h2 {
+    padding-top: 1rem;
+    font-size: 2rem;
+  }
+  #inicio .hero-desc p {
+    font-size: 1.1rem;
+    margin-top: -3rem;
+    line-height: 1.8rem;
+  }
+  #inicio .hero-desc .donar {
+    margin-right: 1.5rem;
+  }
+  .secundaria .hero-desc h2 {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    padding: 0 0 0.5rem 0rem;
+  }
+  .secundaria .hero-desc p {
+    margin-top: 0rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+  .secundaria .hero-img {
+    margin-top: 5rem;
+  }
+  .secundaria .donar img {
+    margin-top: -0.5rem;
+  }
+  .nav-links {
+    font-size: 1.5rem;
+  }
+  .contact h2 {
+    font-size: 2.5rem;
+  }
+  .contact p {
+    padding-top: 0;
+  }
+  .donacion-text {
+    margin: 0;
+  }
+  .donacion-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  .donacion-img img {
+    height: 80%;
   }
 }/*# sourceMappingURL=style.css.map */
