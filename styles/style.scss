@@ -168,4 +168,37 @@ $orange: #ffb800;
         ),
       url("../img/escuela-de-arte-bn.png") center right no-repeat;
   }
+  #inicio {
+    .hero-desc {
+      margin-top: 7rem;
+      min-height: 70vh;
+      justify-content: space-between;
+      h2 {
+        font-size: 2.2rem;
+      }
+      p {
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+      }
+    }
+  }
+  .secundaria {
+    .hero-desc {
+      padding: 0;
+      h2 {
+        font-size: 2rem;
+        padding: 0 0 0.5rem 0;
+      }
+      p {
+        padding: 0;
+        font-size: 1.1rem;
+        line-height: 2rem;
+        text-align: left;
+      }
+    }
+    .hero-img {
+      margin-top: 8rem;
+      max-height: 40vh;
+    }
+  }
 }
