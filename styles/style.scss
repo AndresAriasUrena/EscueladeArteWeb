@@ -26,3 +26,146 @@ $orange: #ffb800;
 
 @import "global";
 @import "donar";
+
+@media screen and (max-width: 1240px) {
+  main {
+    width: 100%;
+    margin: 0;
+  }
+  .header {
+    background: url("../img/guitarrista.png") center bottom/70% no-repeat,
+      // linear-gradient(0deg, rgba(5, 20, 47, 0.8), rgba(5, 20, 47, 0.8)),
+      linear-gradient(
+          135deg,
+          rgba(3, 60, 94, 0.8) 0%,
+          rgba(59, 29, 87, 0.8) 100%
+        ),
+      url("../img/escuela-de-arte-bn.png") center right no-repeat;
+  }
+  .slide {
+    flex-direction: column;
+    width: 90%;
+    text-align: center;
+    // margin-top: 4rem;
+  }
+  .secundaria {
+    .hero-desc {
+      padding: 0;
+      h2 {
+        font-size: 2.5rem;
+        padding: 1rem 0rem;
+      }
+      p {
+        padding: 1rem 1rem;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        text-align: center;
+      }
+    }
+    .hero-img {
+      margin-top: 8rem;
+      max-height: 40vh;
+    }
+    .donar {
+      margin: 0 auto;
+    }
+  }
+  #inicio {
+    .hero-desc {
+      margin-top: 7rem;
+      min-height: 70vh;
+      justify-content: space-between;
+      h2 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.5rem;
+      }
+      .donar {
+        margin: 0 auto;
+      }
+    }
+  }
+  .detail-slide {
+    width: 90%;
+    text-align: center;
+  }
+  .donacion-text {
+    margin-top: 5rem;
+    z-index: 1;
+    p {
+      margin: 0 auto 4rem auto;
+      padding: 1rem;
+      text-align: left;
+    }
+    h1 {
+      margin: 2rem 0rem;
+      padding: 0;
+      font-size: 4.5rem;
+    }
+  }
+  .donacion-nr {
+    font-size: 8rem;
+  }
+  .nav-bar {
+    flex-direction: column;
+    // display: block;
+    // padding: 5rem;
+  }
+  .nav-links {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 6rem;
+    h3 {
+      padding-top: 2rem;
+    }
+  }
+  .contact {
+    width: 90%;
+    h2 {
+      font-size: 3rem;
+      text-align: center;
+    }
+    p {
+      font-size: 1.2rem;
+      padding: 2rem;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 974px) {
+  .header {
+    background: url("../img/guitarrista.png") center bottom/80% no-repeat,
+      // linear-gradient(0deg, rgba(5, 20, 47, 0.8), rgba(5, 20, 47, 0.8)),
+      linear-gradient(
+          135deg,
+          rgba(3, 60, 94, 0.8) 0%,
+          rgba(59, 29, 87, 0.8) 100%
+        ),
+      url("../img/escuela-de-arte-bn.png") center right no-repeat;
+  }
+  .donacion-text {
+    p {
+      margin: 0;
+    }
+  }
+  .donacion-img {
+    max-height: 55vh;
+    flex-basis: content;
+    max-width: 70%;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .header {
+    background: url("../img/guitarrista.png") center bottom/100% no-repeat,
+      // linear-gradient(0deg, rgba(5, 20, 47, 0.8), rgba(5, 20, 47, 0.8)),
+      linear-gradient(
+          135deg,
+          rgba(3, 60, 94, 0.8) 0%,
+          rgba(59, 29, 87, 0.8) 100%
+        ),
+      url("../img/escuela-de-arte-bn.png") center right no-repeat;
+  }
+}

@@ -155,7 +155,7 @@ function detailAnimation() {
     const nextTimg = nextSlide.querySelector("img");
     slideTl.fromTo(slide, { opacity: 1 }, { opacity: 0 });
     slideTl.fromTo(nextSlide, { opacity: 0 }, { opacity: 1 }, "-=1");
-    slideTl.fromTo(nextTimg, { x: "50%" }, { x: "0%" });
+    slideTl.fromTo(nextTimg, { x: "50%", scale: 1 }, { x: "0%", scale: 1.2 });
     //Scene
     detailScene = new ScrollMagic.Scene({
       triggerElement: slide,
@@ -188,10 +188,14 @@ barba.init({
       namespace: "donacion",
       beforeEnter() {
         logo.href = "../index.html";
-        console.log("logo activado");
+        // console.log("logo activado");
         // donarAnimation();
         detailAnimation();
-        console.log("Donar animacion ");
+        // console.log("Donar animacion ");
+      },
+      beforeLeave() {
+        controller.destroy();
+        detailScene.destroy();
       },
     },
   ],
@@ -223,6 +227,15 @@ barba.init({
           { x: "100%", stagger: 0.25, onComplete: done }
         );
         tl.fromTo(next.container, 1, { opacity: 0 }, { opacity: 1 });
+        tl.fromTo(
+          ".nav-header",
+          1,
+          {
+            y: "-100%",
+          },
+          { y: "0%", ease: "power2.inOut" },
+          "-=1.5"
+        );
       },
     },
   ],

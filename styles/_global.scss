@@ -9,7 +9,7 @@ body {
   position: relative;
 }
 .indice {
-  position: absolute;
+  // position: absolute;
 
   //   background: linear-gradient(90deg, #ffe600 36.85%, #ffb800 74.89%);
   // background: $almost-black;
@@ -85,14 +85,14 @@ body {
   align-items: center;
   color: white;
   text-shadow: 4px;
-  background: url("../img/guitarrista.png") right bottom/60% no-repeat,
+  background: url("../img/guitarrista.png") right bottom/50% no-repeat,
     // linear-gradient(0deg, rgba(5, 20, 47, 0.8), rgba(5, 20, 47, 0.8)),
     linear-gradient(
         135deg,
         rgba(3, 60, 94, 0.8) 0%,
         rgba(59, 29, 87, 0.8) 100%
       ),
-    url("../img/escuela-de-arte-bn.png") center center no-repeat;
+    url("../img/escuela-de-arte-bn.png") center bottom/100% no-repeat;
   //   background-size: cover;
   width: 100% !important;
 }
@@ -152,7 +152,7 @@ body {
   // border: 1px solid white;
   font-size: 1rem;
   text-decoration: none;
-  align-self: center;
+  align-self: flex-end;
   cursor: pointer;
   img {
     pointer-events: none;
@@ -238,6 +238,12 @@ body {
   //   .hero-desc a {
   //     align-self: flex-end;
   //   }
+  .hero-desc {
+    p {
+      font-size: 2rem;
+      line-height: 3.2rem;
+    }
+  }
 }
 #programas,
 #nosotros {
@@ -285,6 +291,7 @@ body {
 
 .scrollmagic-pin-spacer {
   position: static !important;
+  overflow: hidden;
 }
 body.hide {
   overflow: hidden;
